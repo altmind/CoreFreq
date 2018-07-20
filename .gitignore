@@ -1,0 +1,13 @@
+/nbproject
+/.idea
+/.*.cmd
+/modules.order
+/Module.symvers
+/corefreqk.mod.c
+/core.*
+/.*/**
+
+/corefreq-cli
+/corefreqd
+/*.o
+/*.ko

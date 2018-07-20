@@ -7559,13 +7559,18 @@ int main(int argc, char *argv[])
 	}
 	munmap(Shm, shmStat.st_size);
 	close(fd);
-      } else
+      } else {
+          fprintf(stderr, "Cannot mmap shm %s. Permissions problem?\n"
+                , SHM_FILENAME);
 	rc = 4;
+      }
     } else
 	rc = 3;
-  } else
+  } else {
+        fprintf(stderr, "Cannot open shm %s, ensure that corefreqd"
+                " is running\n", SHM_FILENAME);
 	rc = 2;
-
+  }
     free(program);
     return(rc);
 }

@@ -1203,14 +1203,27 @@ typedef struct {
 				freehigh;
 } MEM_MCB;
 
+#ifndef CFFI
 #define SYSGATE_STRUCT_SIZE	( sizeof(IDLEDRIVER)			\
 				+ sizeof(int)				\
 				+ sizeof(MEM_MCB)			\
 				+ sizeof(unsigned int)			\
 				+ 4 * MAX_UTS_LEN )
 
+
+
 #define TASK_LIMIT		(((4096 << 5) - SYSGATE_STRUCT_SIZE)	\
 				/ sizeof(TASK_MCB))
+
+_Static_assert ((SYSGATE_STRUCT_SIZE) == 628, "If this assert fails, please "
+        "update the hardcoded SYSGATE_STRUCT_SIZE in header file(for CFFI)");
+_Static_assert ((TASK_LIMIT) == 2329, "If this assert fails, please "
+        "update the hardcoded TASK_LIMIT in header file(for CFFI)");
+
+#else
+#define SYSGATE_STRUCT_SIZE	628
+#define TASK_LIMIT		2329
+#endif
 
 // Input-Output Control
 #define COREFREQ_TOGGLE_OFF	0x0000000000000000L
