@@ -8,7 +8,7 @@
 
 typedef struct
 {
-	Bit64				OffLine __attribute__ ((aligned (64)));
+	Bit64				OffLine ;
 
 	CLOCK				Clock;
 
@@ -150,11 +150,11 @@ typedef struct
 
 typedef struct
 {
-	volatile unsigned long long	Sync __attribute__ ((aligned (128)));
+	volatile unsigned long long	Sync;
 
 	FEATURES			Features;
 
-	Bit64			PowerNow	__attribute__ ((aligned (64)));
+	Bit64			PowerNow	;
 
 	struct {
 		unsigned long long
@@ -251,7 +251,7 @@ typedef struct
 	} Registration;
 
 	struct {
-		Bit64		Operation	__attribute__ ((aligned (64)));
+		Bit64		Operation	;
 
 		IDLEDRIVER	IdleDriver;
 

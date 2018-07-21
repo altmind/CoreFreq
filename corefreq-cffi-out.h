@@ -220,17 +220,17 @@ typedef __pid_t pid_t;
 
 
 
-extern clock_t clock (void) __attribute__ ((__nothrow__ , __leaf__));
+extern clock_t clock (void) ;
 
 
-extern time_t time (time_t *__timer) __attribute__ ((__nothrow__ , __leaf__));
+extern time_t time (time_t *__timer) ;
 
 
 extern double difftime (time_t __time1, time_t __time0)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+     ;
 
 
-extern time_t mktime (struct tm *__tp) __attribute__ ((__nothrow__ , __leaf__));
+extern time_t mktime (struct tm *__tp) ;
 
 
 
@@ -238,7 +238,7 @@ extern time_t mktime (struct tm *__tp) __attribute__ ((__nothrow__ , __leaf__));
 
 extern size_t strftime (char * __s, size_t __maxsize,
    const char * __format,
-   const struct tm * __tp) __attribute__ ((__nothrow__ , __leaf__));
+   const struct tm * __tp) ;
 
 # 221 "/usr/include/time.h" 3 4
 # 1 "/usr/include/xlocale.h" 1 3 4
@@ -264,37 +264,37 @@ typedef __locale_t locale_t;
 extern size_t strftime_l (char * __s, size_t __maxsize,
      const char * __format,
      const struct tm * __tp,
-     __locale_t __loc) __attribute__ ((__nothrow__ , __leaf__));
+     __locale_t __loc) ;
 # 236 "/usr/include/time.h" 3 4
 
 
 
-extern struct tm *gmtime (const time_t *__timer) __attribute__ ((__nothrow__ , __leaf__));
+extern struct tm *gmtime (const time_t *__timer) ;
 
 
 
-extern struct tm *localtime (const time_t *__timer) __attribute__ ((__nothrow__ , __leaf__));
+extern struct tm *localtime (const time_t *__timer) ;
 
 
 
 
 
 extern struct tm *gmtime_r (const time_t * __timer,
-       struct tm * __tp) __attribute__ ((__nothrow__ , __leaf__));
+       struct tm * __tp) ;
 
 
 
 extern struct tm *localtime_r (const time_t * __timer,
-          struct tm * __tp) __attribute__ ((__nothrow__ , __leaf__));
+          struct tm * __tp) ;
 
 
 
 
 
-extern char *asctime (const struct tm *__tp) __attribute__ ((__nothrow__ , __leaf__));
+extern char *asctime (const struct tm *__tp) ;
 
 
-extern char *ctime (const time_t *__timer) __attribute__ ((__nothrow__ , __leaf__));
+extern char *ctime (const time_t *__timer) ;
 
 
 
@@ -303,11 +303,11 @@ extern char *ctime (const time_t *__timer) __attribute__ ((__nothrow__ , __leaf_
 
 
 extern char *asctime_r (const struct tm * __tp,
-   char * __buf) __attribute__ ((__nothrow__ , __leaf__));
+   char * __buf) ;
 
 
 extern char *ctime_r (const time_t * __timer,
-        char * __buf) __attribute__ ((__nothrow__ , __leaf__));
+        char * __buf) ;
 
 
 
@@ -323,7 +323,7 @@ extern char *tzname[2];
 
 
 
-extern void tzset (void) __attribute__ ((__nothrow__ , __leaf__));
+extern void tzset (void) ;
 
 
 
@@ -334,29 +334,29 @@ extern long int timezone;
 
 
 
-extern int stime (const time_t *__when) __attribute__ ((__nothrow__ , __leaf__));
+extern int stime (const time_t *__when) ;
 # 319 "/usr/include/time.h" 3 4
-extern time_t timegm (struct tm *__tp) __attribute__ ((__nothrow__ , __leaf__));
+extern time_t timegm (struct tm *__tp) ;
 
 
-extern time_t timelocal (struct tm *__tp) __attribute__ ((__nothrow__ , __leaf__));
+extern time_t timelocal (struct tm *__tp) ;
 
 
-extern int dysize (int __year) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+extern int dysize (int __year) ;
 # 334 "/usr/include/time.h" 3 4
 extern int nanosleep (const struct timespec *__requested_time,
         struct timespec *__remaining);
 
 
 
-extern int clock_getres (clockid_t __clock_id, struct timespec *__res) __attribute__ ((__nothrow__ , __leaf__));
+extern int clock_getres (clockid_t __clock_id, struct timespec *__res) ;
 
 
-extern int clock_gettime (clockid_t __clock_id, struct timespec *__tp) __attribute__ ((__nothrow__ , __leaf__));
+extern int clock_gettime (clockid_t __clock_id, struct timespec *__tp) ;
 
 
 extern int clock_settime (clockid_t __clock_id, const struct timespec *__tp)
-     __attribute__ ((__nothrow__ , __leaf__));
+     ;
 
 
 
@@ -368,29 +368,29 @@ extern int clock_nanosleep (clockid_t __clock_id, int __flags,
        struct timespec *__rem);
 
 
-extern int clock_getcpuclockid (pid_t __pid, clockid_t *__clock_id) __attribute__ ((__nothrow__ , __leaf__));
+extern int clock_getcpuclockid (pid_t __pid, clockid_t *__clock_id) ;
 
 
 
 
 extern int timer_create (clockid_t __clock_id,
     struct sigevent * __evp,
-    timer_t * __timerid) __attribute__ ((__nothrow__ , __leaf__));
+    timer_t * __timerid) ;
 
 
-extern int timer_delete (timer_t __timerid) __attribute__ ((__nothrow__ , __leaf__));
+extern int timer_delete (timer_t __timerid) ;
 
 
 extern int timer_settime (timer_t __timerid, int __flags,
      const struct itimerspec * __value,
-     struct itimerspec * __ovalue) __attribute__ ((__nothrow__ , __leaf__));
+     struct itimerspec * __ovalue) ;
 
 
 extern int timer_gettime (timer_t __timerid, struct itimerspec *__value)
-     __attribute__ ((__nothrow__ , __leaf__));
+     ;
 
 
-extern int timer_getoverrun (timer_t __timerid) __attribute__ ((__nothrow__ , __leaf__));
+extern int timer_getoverrun (timer_t __timerid) ;
 # 430 "/usr/include/time.h" 3 4
 
 # 11 "corefreq-cffi.h" 2
@@ -476,18 +476,18 @@ typedef unsigned long int ulong;
 typedef unsigned short int ushort;
 typedef unsigned int uint;
 # 194 "/usr/include/sys/types.h" 3 4
-typedef int int8_t __attribute__ ((__mode__ (__QI__)));
-typedef int int16_t __attribute__ ((__mode__ (__HI__)));
-typedef int int32_t __attribute__ ((__mode__ (__SI__)));
-typedef int int64_t __attribute__ ((__mode__ (__DI__)));
+typedef int int8_t ;
+typedef int int16_t ;
+typedef int int32_t ;
+typedef int int64_t ;
 
 
-typedef unsigned int u_int8_t __attribute__ ((__mode__ (__QI__)));
-typedef unsigned int u_int16_t __attribute__ ((__mode__ (__HI__)));
-typedef unsigned int u_int32_t __attribute__ ((__mode__ (__SI__)));
-typedef unsigned int u_int64_t __attribute__ ((__mode__ (__DI__)));
+typedef unsigned int u_int8_t ;
+typedef unsigned int u_int16_t ;
+typedef unsigned int u_int32_t ;
+typedef unsigned int u_int64_t ;
 
-typedef int register_t __attribute__ ((__mode__ (__word__)));
+typedef int register_t ;
 # 216 "/usr/include/sys/types.h" 3 4
 # 1 "/usr/include/endian.h" 1 3 4
 # 36 "/usr/include/endian.h" 3 4
@@ -509,14 +509,14 @@ typedef int register_t __attribute__ ((__mode__ (__word__)));
 
 
 extern unsigned int gnu_dev_major (unsigned long long int __dev)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+     ;
 
 extern unsigned int gnu_dev_minor (unsigned long long int __dev)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+     ;
 
 extern unsigned long long int gnu_dev_makedev (unsigned int __major,
             unsigned int __minor)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+     ;
 # 63 "/usr/include/sys/sysmacros.h" 3 4
 
 # 223 "/usr/include/sys/types.h" 2 3 4
@@ -1165,7 +1165,7 @@ typedef union
 } AMD_0F_HTT_FREQUENCY;
 # 16 "corefreq-cffi.h" 2
 # 1 "intelmsr.h" 1
-# 179 "intelmsr.h"
+# 183 "intelmsr.h"
 typedef union
 {
  unsigned long long value;
@@ -1315,10 +1315,10 @@ typedef union
   ReservedBits : 64-19;
  };
 } CSTATE_IO_MWAIT;
-# 351 "intelmsr.h"
+# 355 "intelmsr.h"
 typedef union
 {
-# 364 "intelmsr.h"
+# 368 "intelmsr.h"
  unsigned long long value;
  struct
  {
@@ -1518,7 +1518,7 @@ typedef union
   ReservedBits : 64-4;
  };
 } ENERGY_PERF_BIAS;
-# 577 "intelmsr.h"
+# 581 "intelmsr.h"
 typedef union
 {
  unsigned long long value;
@@ -1532,7 +1532,7 @@ typedef union
   ReservedBits2 : 64-23;
  };
 } MISC_PWR_MGMT;
-# 598 "intelmsr.h"
+# 602 "intelmsr.h"
 typedef union
 {
  unsigned long long value;
@@ -1836,6 +1836,15 @@ typedef union
   EN_CTR0 : 23-22,
   ReservedBits3 : 64-23;
  } SKL;
+ struct
+ {
+  unsigned long long
+  ReservedBits1 : 20-0,
+  EN_Overflow : 21-20,
+  ReservedBits2 : 22-21,
+  EN_CTR0 : 23-22,
+  ReservedBits3 : 64-23;
+ } HSW_EP;
 } UNCORE_FIXED_PERF_CONTROL;
 
 typedef union
@@ -1851,7 +1860,7 @@ typedef union
   ReservedBits3 : 64-20;
  };
 } RAPL_POWER_UNIT;
-# 935 "intelmsr.h"
+# 948 "intelmsr.h"
 typedef union
 {
  unsigned long long value;
@@ -3649,7 +3658,7 @@ typedef struct
  unsigned int FactoryFreq;
 
  struct {
-  unsigned InvariantTSC : 8-0,
+  Bit32 InvariantTSC : 8-0,
    HyperThreading : 9-8,
    HTT_Enable : 10-9,
    Ratio_Unlock : 11-10,
@@ -3768,7 +3777,7 @@ enum {
 # 9 "corefreq.h"
 typedef struct
 {
- Bit64 OffLine __attribute__ ((aligned (64)));
+ Bit64 OffLine ;
 
  CLOCK Clock;
 
@@ -3910,11 +3919,11 @@ typedef struct
 
 typedef struct
 {
- volatile unsigned long long Sync __attribute__ ((aligned (128)));
+ volatile unsigned long long Sync;
 
  FEATURES Features;
 
- Bit64 PowerNow __attribute__ ((aligned (64)));
+ Bit64 PowerNow ;
 
  struct {
   unsigned long long
@@ -4011,7 +4020,7 @@ typedef struct
  } Registration;
 
  struct {
-  Bit64 Operation __attribute__ ((aligned (64)));
+  Bit64 Operation ;
 
   IDLEDRIVER IdleDriver;
 
@@ -4344,7 +4353,7 @@ typedef struct
      _pad[7];
  } Sync;
 
- Bit64 OffLine __attribute__ ((aligned (64)));
+ Bit64 OffLine ;
 
  struct
  {
@@ -4673,32 +4682,32 @@ typedef struct
 
  FEATURES Features;
 
- Bit64 CR_Mask __attribute__ ((aligned (64)));
- Bit64 ODCM_Mask __attribute__ ((aligned (64)));
- Bit64 PowerMgmt_Mask __attribute__ ((aligned (64)));
- Bit64 SpeedStep_Mask __attribute__ ((aligned (64)));
- Bit64 TurboBoost_Mask __attribute__ ((aligned (64)));
- Bit64 C1E_Mask __attribute__ ((aligned (64)));
- Bit64 C3A_Mask __attribute__ ((aligned (64)));
- Bit64 C1A_Mask __attribute__ ((aligned (64)));
- Bit64 C3U_Mask __attribute__ ((aligned (64)));
- Bit64 C1U_Mask __attribute__ ((aligned (64)));
- Bit64 CC6_Mask __attribute__ ((aligned (64)));
- Bit64 PC6_Mask __attribute__ ((aligned (64)));
+ Bit64 CR_Mask ;
+ Bit64 ODCM_Mask ;
+ Bit64 PowerMgmt_Mask ;
+ Bit64 SpeedStep_Mask ;
+ Bit64 TurboBoost_Mask ;
+ Bit64 C1E_Mask ;
+ Bit64 C3A_Mask ;
+ Bit64 C1A_Mask ;
+ Bit64 C3U_Mask ;
+ Bit64 C1U_Mask ;
+ Bit64 CC6_Mask ;
+ Bit64 PC6_Mask ;
 
- Bit64 ODCM __attribute__ ((aligned (64)));
- Bit64 PowerMgmt __attribute__ ((aligned (64)));
- Bit64 SpeedStep __attribute__ ((aligned (64)));
- Bit64 TurboBoost __attribute__ ((aligned (64)));
- Bit64 C1E __attribute__ ((aligned (64)));
- Bit64 C3A __attribute__ ((aligned (64)));
- Bit64 C1A __attribute__ ((aligned (64)));
- Bit64 C3U __attribute__ ((aligned (64)));
- Bit64 C1U __attribute__ ((aligned (64)));
- Bit64 CC6 __attribute__ ((aligned (64)));
- Bit64 PC6 __attribute__ ((aligned (64)));
- Bit64 SMM __attribute__ ((aligned (64)));
- Bit64 VM __attribute__ ((aligned (64)));
+ Bit64 ODCM ;
+ Bit64 PowerMgmt ;
+ Bit64 SpeedStep ;
+ Bit64 TurboBoost ;
+ Bit64 C1E ;
+ Bit64 C3A ;
+ Bit64 C1A ;
+ Bit64 C3U ;
+ Bit64 C1U ;
+ Bit64 CC6 ;
+ Bit64 PC6 ;
+ Bit64 SMM ;
+ Bit64 VM ;
 
  unsigned long long thermalFormula,
     voltageFormula,

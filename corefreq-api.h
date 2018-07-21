@@ -259,7 +259,7 @@ typedef struct
 					_pad[7];
 	} Sync;
 
-	Bit64				OffLine __attribute__ ((aligned (64)));
+	Bit64				OffLine ;
 
 	struct
 	{
@@ -588,32 +588,32 @@ typedef struct
 
 	FEATURES		Features;
 
-	Bit64			CR_Mask 	__attribute__ ((aligned (64)));
-	Bit64			ODCM_Mask	__attribute__ ((aligned (64)));
-	Bit64			PowerMgmt_Mask	__attribute__ ((aligned (64)));
-	Bit64			SpeedStep_Mask	__attribute__ ((aligned (64)));
-	Bit64			TurboBoost_Mask __attribute__ ((aligned (64)));
-	Bit64			C1E_Mask __attribute__ ((aligned (64)));
-	Bit64			C3A_Mask __attribute__ ((aligned (64))); // NHM
-	Bit64			C1A_Mask __attribute__ ((aligned (64))); // NHM
-	Bit64			C3U_Mask __attribute__ ((aligned (64))); // SNB
-	Bit64			C1U_Mask __attribute__ ((aligned (64))); // SNB
-	Bit64			CC6_Mask __attribute__ ((aligned (64))); // AMD
-	Bit64			PC6_Mask __attribute__ ((aligned (64))); // AMD
+	Bit64			CR_Mask 	;
+	Bit64			ODCM_Mask	;
+	Bit64			PowerMgmt_Mask	;
+	Bit64			SpeedStep_Mask	;
+	Bit64			TurboBoost_Mask ;
+	Bit64			C1E_Mask ;
+	Bit64			C3A_Mask ; // NHM
+	Bit64			C1A_Mask ; // NHM
+	Bit64			C3U_Mask ; // SNB
+	Bit64			C1U_Mask ; // SNB
+	Bit64			CC6_Mask ; // AMD
+	Bit64			PC6_Mask ; // AMD
 
-	Bit64			ODCM		__attribute__ ((aligned (64)));
-	Bit64			PowerMgmt	__attribute__ ((aligned (64)));
-	Bit64			SpeedStep	__attribute__ ((aligned (64)));
-	Bit64			TurboBoost	__attribute__ ((aligned (64)));
-	Bit64			C1E		__attribute__ ((aligned (64)));
-	Bit64			C3A		__attribute__ ((aligned (64)));
-	Bit64			C1A		__attribute__ ((aligned (64)));
-	Bit64			C3U		__attribute__ ((aligned (64)));
-	Bit64			C1U		__attribute__ ((aligned (64)));
-	Bit64			CC6		__attribute__ ((aligned (64)));
-	Bit64			PC6		__attribute__ ((aligned (64)));
-	Bit64			SMM		__attribute__ ((aligned (64)));
-	Bit64			VM		__attribute__ ((aligned (64)));
+	Bit64			ODCM		;
+	Bit64			PowerMgmt	;
+	Bit64			SpeedStep	;
+	Bit64			TurboBoost	;
+	Bit64			C1E		;
+	Bit64			C3A		;
+	Bit64			C1A		;
+	Bit64			C3U		;
+	Bit64			C1U		;
+	Bit64			CC6		;
+	Bit64			PC6		;
+	Bit64			SMM		;
+	Bit64			VM		;
 
 	unsigned long long	thermalFormula,
 				voltageFormula,

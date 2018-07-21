@@ -5,11 +5,11 @@
 obj-m := corefreqk.o
 KVERSION = $(shell uname -r)
 DESTDIR = $(HOME)
-CC = cc -g -O0
+CC = cc
 
 ROOT_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 
-all: corefreqd corefreq-cli
+all: corefreqd corefreq-cli corefreq-cffi-out.h
 	make -C /lib/modules/$(KVERSION)/build M=${ROOT_DIR} modules
 
 clean:
@@ -33,3 +33,8 @@ corefreq-cli.o: corefreq-cli.c
 
 corefreq-cli: corefreq-cli.o corefreq-ui.o
 	$(CC) corefreq-cli.c corefreq-ui.c -o corefreq-cli -lm -lrt
+
+corefreq-cffi.h: bitasm.h amdmsr.h intelmsr.h coretypes.h corefreq.h corefreqm.h corefreq-api.h
+
+corefreq-cffi-out.h: corefreq-cffi.h
+	$(CC) -DCFFI=1 -E corefreq-cffi.h > corefreq-cffi-out.h
